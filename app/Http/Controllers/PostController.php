@@ -8,16 +8,26 @@ use App\Models\Post;
 class PostController extends Controller
 {
     public function index(){
+
+        $posts = Post::latest();
+
+        if(request('search')){
+            $posts->where('title', 'like', '%'.request('search'). '%')
+            ->orWhere('body', 'like', '%'.request('search'). '%');
+        }
+
         return view('posts', [
             'title' => "All Posts",
-            // 'posts' => Post::all()
-            'posts' => Post::with(['author', 'category'])->latest()->get(),
+            'active'=> 'posts',
+            
+            'posts' => $posts->get(),
         ]);
     }
 
     public function show(Post $post) {
         return view('post', [
             'title' => "Single Page",
+            'active'=> 'posts',
             'post' => $post
         ]); 
     }
