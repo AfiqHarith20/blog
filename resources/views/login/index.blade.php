@@ -2,9 +2,16 @@
 
 @section('container')
 
-<main class="form-signin w-100 m-auto">
+  <main class="form-signin w-100 m-auto">
+
+@if(session()-> has('success'))
+  <div class="alert alert-success" role="alert">
+    {{ session('success') }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@endif
+
     <form>
-      
       <h1 class="h3 mb-3 fw-normal">Please Sign In</h1>
   
       <div class="form-floating">
