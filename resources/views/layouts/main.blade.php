@@ -11,6 +11,8 @@
 
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/e698e59cd8.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/e698e59cd8.js" crossorigin="anonymous"></script>
 
     {{-- My Style --}}
     <link rel="stylesheet" href="/css/style.css">
